@@ -1,0 +1,16 @@
+name: Hello World
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to echo'
+        required: false
+        default: 'Hello from API'
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "${{ github.event.inputs.message }}"
