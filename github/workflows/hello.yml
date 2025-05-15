@@ -1,0 +1,16 @@
+name: Hello World
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'A message to echo'
+        required: false
+        default: '👋 Hello from GitHub Actions!'
+
+jobs:
+  say-hi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "${{ github.event.inputs.message }}"
